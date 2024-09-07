@@ -1,37 +1,52 @@
-const skillsSection = document.getElementById('skills') as HTMLElement | null;
-const toggleSkillsBtn = document.getElementById('toggle-skills') as HTMLButtonElement | null;
-const editPersonalInfoBtn = document.getElementById('edit-personal-info') as HTMLButtonElement | null;
-const editEducationBtn = document.getElementById('edit-education') as HTMLButtonElement | null;
+// Define type for HTML elements
+const toggleSkillsBtn: HTMLButtonElement | null = document.getElementById("toggle-skills-btn") as HTMLButtonElement;
+const skillsSection: HTMLElement | null = document.getElementById("skills-section");
+const toggleExperienceBtn: HTMLButtonElement | null = document.getElementById("toggle-experience-btn") as HTMLButtonElement;
+const experienceSection: HTMLElement | null = document.getElementById("experience-section");
 
-toggleSkillsBtn?.addEventListener('click', () => {
-    if (skillsSection && skillsSection.style.display === 'none') {
-        skillsSection.style.display = 'block';
-    } else if (skillsSection) {
-        skillsSection.style.display = 'none';
+// Initialize state
+let isShowingSkills = true;
+let isShowingExperience = true;
+
+// Set initial button text based on state
+if (toggleSkillsBtn) {
+    toggleSkillsBtn.innerText = isShowingSkills ? 'Hide Skills' : 'Show Skills';
+}
+
+if (toggleExperienceBtn) {
+    toggleExperienceBtn.innerText = isShowingExperience ? 'Hide Experience' : 'Show Experience';
+}
+
+// Toggle skills section visibility
+toggleSkillsBtn?.addEventListener("click", function () {
+    if (skillsSection) {
+        if (skillsSection.style.display === "none" || skillsSection.style.display === "") {
+            skillsSection.style.display = "block";
+            isShowingSkills = true;
+        } else {
+            skillsSection.style.display = "none";
+            isShowingSkills = false;
+        }
+        // Update button text after toggling
+        if (toggleSkillsBtn) {
+            toggleSkillsBtn.innerText = isShowingSkills ? 'Hide Skills' : 'Show Skills';
+        }
     }
 });
 
-editPersonalInfoBtn?.addEventListener('click', () => {
-    const name = prompt("Enter your name", "John Doe");
-    const contact = prompt("Enter your contact", "johndoe@example.com");
-
-    const nameElement = document.getElementById('name') as HTMLElement | null;
-    const contactElement = document.getElementById('contact') as HTMLElement | null;
-
-    if (name && nameElement) {
-        nameElement.textContent = name;
-    }
-
-    if (contact && contactElement) {
-        contactElement.textContent = contact;
-    }
-});
-
-editEducationBtn?.addEventListener('click', () => {
-    const degree = prompt("Enter your degree", "Bachelor of Science in Computer Science");
-    const degreeElement = document.getElementById('degree') as HTMLElement | null;
-
-    if (degree && degreeElement) {
-        degreeElement.textContent = degree;
+// Toggle experience section visibility
+toggleExperienceBtn?.addEventListener("click", function () {
+    if (experienceSection) {
+        if (experienceSection.style.display === "none" || experienceSection.style.display === "") {
+            experienceSection.style.display = "block";
+            isShowingExperience = true;
+        } else {
+            experienceSection.style.display = "none";
+            isShowingExperience = false;
+        }
+        // Update button text after toggling
+        if (toggleExperienceBtn) {
+            toggleExperienceBtn.innerText = isShowingExperience ? 'Hide Experience' : 'Show Experience';
+        }
     }
 });

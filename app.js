@@ -1,31 +1,49 @@
-var skillsSection = document.getElementById('skills');
-var toggleSkillsBtn = document.getElementById('toggle-skills');
-var editPersonalInfoBtn = document.getElementById('edit-personal-info');
-var editEducationBtn = document.getElementById('edit-education');
-toggleSkillsBtn === null || toggleSkillsBtn === void 0 ? void 0 : toggleSkillsBtn.addEventListener('click', function () {
-    if (skillsSection && skillsSection.style.display === 'none') {
-        skillsSection.style.display = 'block';
-    }
-    else if (skillsSection) {
-        skillsSection.style.display = 'none';
+// Define type for HTML elements
+var toggleSkillsBtn = document.getElementById("toggle-skills-btn");
+var skillsSection = document.getElementById("skills-section");
+var toggleExperienceBtn = document.getElementById("toggle-experience-btn");
+var experienceSection = document.getElementById("experience-section");
+// Initialize state
+var isShowingSkills = true;
+var isShowingExperience = true;
+// Set initial button text based on state
+if (toggleSkillsBtn) {
+    toggleSkillsBtn.innerText = isShowingSkills ? 'Hide Skills' : 'Show Skills';
+}
+if (toggleExperienceBtn) {
+    toggleExperienceBtn.innerText = isShowingExperience ? 'Hide Experience' : 'Show Experience';
+}
+// Toggle skills section visibility
+toggleSkillsBtn === null || toggleSkillsBtn === void 0 ? void 0 : toggleSkillsBtn.addEventListener("click", function () {
+    if (skillsSection) {
+        if (skillsSection.style.display === "none" || skillsSection.style.display === "") {
+            skillsSection.style.display = "block";
+            isShowingSkills = true;
+        }
+        else {
+            skillsSection.style.display = "none";
+            isShowingSkills = false;
+        }
+        // Update button text after toggling
+        if (toggleSkillsBtn) {
+            toggleSkillsBtn.innerText = isShowingSkills ? 'Hide Skills' : 'Show Skills';
+        }
     }
 });
-editPersonalInfoBtn === null || editPersonalInfoBtn === void 0 ? void 0 : editPersonalInfoBtn.addEventListener('click', function () {
-    var name = prompt("Enter your name", "John Doe");
-    var contact = prompt("Enter your contact", "johndoe@example.com");
-    var nameElement = document.getElementById('name');
-    var contactElement = document.getElementById('contact');
-    if (name && nameElement) {
-        nameElement.textContent = name;
-    }
-    if (contact && contactElement) {
-        contactElement.textContent = contact;
-    }
-});
-editEducationBtn === null || editEducationBtn === void 0 ? void 0 : editEducationBtn.addEventListener('click', function () {
-    var degree = prompt("Enter your degree", "Bachelor of Science in Computer Science");
-    var degreeElement = document.getElementById('degree');
-    if (degree && degreeElement) {
-        degreeElement.textContent = degree;
+// Toggle experience section visibility
+toggleExperienceBtn === null || toggleExperienceBtn === void 0 ? void 0 : toggleExperienceBtn.addEventListener("click", function () {
+    if (experienceSection) {
+        if (experienceSection.style.display === "none" || experienceSection.style.display === "") {
+            experienceSection.style.display = "block";
+            isShowingExperience = true;
+        }
+        else {
+            experienceSection.style.display = "none";
+            isShowingExperience = false;
+        }
+        // Update button text after toggling
+        if (toggleExperienceBtn) {
+            toggleExperienceBtn.innerText = isShowingExperience ? 'Hide Experience' : 'Show Experience';
+        }
     }
 });

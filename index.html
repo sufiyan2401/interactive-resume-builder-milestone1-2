@@ -4,45 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume Builder</title>
+    <title>Interactive Resume</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="resume-container">
-        <h1>Interactive Resume Builder</h1>
+    <div class="cv-container">
+        <div class="header">
+            <div class="full-name">
+                <span class="first-name">Sufiyan</span>
+                <span class="last-name">Tahir</span>
+            </div>
+            <div class="contact-info">
+                <span class="email">Email: </span>
+                <span class="email-val">sufiyan240107@gmail.com</span>
+                <span class="separator"></span>
+                <span class="phone">Phone: </span>
+                <span class="phone-val">0334-3799705</span>
+            </div>
+            <div class="about">
+                <span class="position">MERN STACK DEV </span>
+            </div>
+            <!-- Profile Picture -->
+            <div class="profile-pic">
+                <img src="./1713020023101.jfif" alt="Profile Picture">
+            </div>
+        </div>
+        <div class="details">
+            <div class="section">
+                <div class="section__title">Education</div>
+                <div class="section__list">
+                    <div class="section__list-item">
+                        <div class="left">
+                            <div class="name">Completed Intermediate Govt. Islamia College</div>
+                            <div class="duration">2022-2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Personal Information Section -->
-        <section id="personal-info">
-            <h2>Personal Information</h2>
-            <p>Name: <span id="name">John Doe</span></p>
-            <p>Contact: <span id="contact">johndoe@example.com</span></p>
-            <button id="edit-personal-info">Edit</button>
-        </section>
+            <div class="section">
+                <div class="section__title">Skills</div>
+                <div id="skills-section" class="skills">
+                    <div class="skills__item">
+                        <div class="left">
+                            <div class="name">NEXT JS</div>
+                        </div>
+                    </div>
+                    <div class="skills__item">
+                        <div class="left">
+                            <div class="name">REACT JS</div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            <p>Degree: <span id="degree">Bachelor of Science in Computer Science</span></p>
-            <button id="edit-education">Edit</button>
-        </section>
+                <button role="button" class="button-name" id="toggle-skills-btn"></button>
+            </div>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul id="skills-list">
-                <li>JavaScript</li>
-                <li>HTML & CSS</li>
-                <li>React.js</li>
-            </ul>
-            <button id="toggle-skills">Toggle Skills</button>
-        </section>
-
-        <!-- Work Experience Section -->
-        <section id="work-experience">
-            <h2>Work Experience</h2>
-            <p>Software Engineer at XYZ Corp.</p>
-        </section>
+            <div class="section">
+                <div class="section__title">Experience</div>
+                <div class="section__list" id="experience-section">
+                    <div class="section__list-item">
+                        <div class="left">
+                            <div class="name">MERN stack dev at Bitrupt</div>
+                            <div class="duration">Jan 2024 - Present</div>
+                        </div>
+                    </div>
+                </div>
+                <button role="button" class="button-name" id="toggle-experience-btn">234234324</button>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
