@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="resume-container">
+        <h1>Interactive Resume Builder</h1>
+
+        <!-- Personal Information Section -->
+        <section id="personal-info">
+            <h2>Personal Information</h2>
+            <p>Name: <span id="name">John Doe</span></p>
+            <p>Contact: <span id="contact">johndoe@example.com</span></p>
+            <button id="edit-personal-info">Edit</button>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <p>Degree: <span id="degree">Bachelor of Science in Computer Science</span></p>
+            <button id="edit-education">Edit</button>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul id="skills-list">
+                <li>JavaScript</li>
+                <li>HTML & CSS</li>
+                <li>React.js</li>
+            </ul>
+            <button id="toggle-skills">Toggle Skills</button>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="work-experience">
+            <h2>Work Experience</h2>
+            <p>Software Engineer at XYZ Corp.</p>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
